@@ -6,7 +6,6 @@
     "chrome_url_overrides": {
         "newtab": "index.html"
     },
-    "default_locale": "en",
     "permissions": ["storage", "geolocation"],
     "applications": {
         "gecko": {
