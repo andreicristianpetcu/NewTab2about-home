@@ -1,0 +1,16 @@
+{
+    "name": "New Tab to about:home",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "description": "Replace new tab screen abput:home",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "default_locale": "en",
+    "permissions": ["storage", "geolocation"],
+    "applications": {
+        "gecko": {
+            "id": "{9804266c-ccee-4fd2-8250-5fdf992d4364}"
+        }
+    }
+}
