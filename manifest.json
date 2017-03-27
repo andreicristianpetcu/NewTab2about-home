@@ -1,15 +1,25 @@
 {
     "name": "New Tab to about:home",
-    "version": "1.0.1",
+    "author": "Andrei Petcu",
+    "version": "1.1.0",
     "manifest_version": 2,
-    "description": "Replace new tab screen about:home",
+    "icons": {
+      "32": "images/icon32x32.png",
+      "64": "images/icon64x64.png"
+    },
+    "description": "Replace new tab screen with about:home. This is a WebExtension and currently works in Firefox versions greater or equal to 54. The Icon is made by Mahmure Alp found on The Noun Project and is unde CC-BY 3.0",
+    "homepage_url": "https://github.com/andreicristianpetcu/NewTab2about-home",
     "chrome_url_overrides": {
         "newtab": "index.html"
     },
-    "permissions": [],
+    "permissions": ["storage"],
+    "options_ui": {
+      "page": "options.html"
+    },
     "applications": {
         "gecko": {
-            "id": "{9804266c-ccee-4fd2-8250-5fdf992d4364}"
+          "id": "{9804266c-ccee-4fd2-8250-5fdf992d4364}",
+          "strict_min_version": "54.0a"
         }
     }
 }
