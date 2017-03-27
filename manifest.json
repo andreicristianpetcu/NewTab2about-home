@@ -18,8 +18,7 @@
     },
     "applications": {
         "gecko": {
-          "id": "{9804266c-ccee-4fd2-8250-5fdf992d4364}",
-          "strict_min_version": "54.0a"
+          "id": "{b5c106db-2544-4e91-a162-4fb4aedcef20}"
         }
     }
 }
