@@ -16,6 +16,10 @@
     "options_ui": {
       "page": "options.html"
     },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+    }],
     "default_locale": "en",
     "applications": {
         "gecko": {

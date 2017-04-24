@@ -1,7 +1,8 @@
 function saveOptions(e) {
   e.preventDefault();
   browser.storage.local.set({
-    newtabpage: document.querySelector("#newtabpage").value
+    newtabpage: document.querySelector("#newtabpage").value,
+    focussearch: document.querySelector("#focussearch").value
   });
 }
 
