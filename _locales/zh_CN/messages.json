@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "新标签页到about:home页",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "把新标签页替代about:home页。",
+    "description": "The description of the application"
+  }
+}
