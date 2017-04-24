@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "New Tab to about:home",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Replace new tab screen with about:home. This is a WebExtension and currently works in Firefox versions greater or equal to 54. The Icon is made by Mahmure Alp found on The Noun Project and is unde CC-BY 3.0",
+    "description": "The description of the application"
+  }
+}
