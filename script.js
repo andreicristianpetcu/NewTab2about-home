@@ -1,7 +1,13 @@
 (function(){
   browser.storage.local.get("newtabpage").then(settings => {
-    document.location = settings.newtabpage || 'about:home';
+    try {
+      let targetPage = settings.newtabpage || 'about:home';
+      document.title = `Redirecting to ${targetPage}`;
+      document.location = targetPage;
+    } catch(e) {
+      document.getElementById('error_detail').innerText = e;
+    }    
   }, error => {
-    console.log(`Error: ${error}`);
+    document.getElementById('error_detail').innerText = error;
   });
 })();
