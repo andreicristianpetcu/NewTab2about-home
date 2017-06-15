@@ -1,22 +1,31 @@
+var pageUrlBox = document.querySelector("#newtabpage");
+function showMessageOnButton(message){
+  document.querySelector("#save_button").innerText = message;
+}
 function saveOptions(e) {
   e.preventDefault();
   browser.storage.local.set({
-    newtabpage: document.querySelector("#newtabpage").value
-  });
+    newtabpage: pageUrlBox.value
+  }).then(() => {
+      showMessageOnButton('Seved!');
+      setTimeout(function(){ showMessageOnButton('Save'); }, 3000);
+    }, error => {
+      showMessageOnButton('Error!');
+      setTimeout(function(){ showMessageOnButton('Save'); }, 3000);
+      console.log(error);
+    }
+  );
 }
 
 function restoreOptions() {
 
   function setCurrentChoice(result) {
-    document.querySelector("#newtabpage").value = result.newtabpage || "about:home";
+    pageUrlBox.value = result.newtabpage || "about:home";
   }
 
-  function onError(error) {
-    console.log(`Error: ${error}`);
-  }
-
-  var getting = browser.storage.local.get("newtabpage");
-  getting.then(setCurrentChoice, onError);
+  browser.storage.local.get("newtabpage").then(setCurrentChoice, error => {
+    console.log(error);
+  });
 }
 
 document.addEventListener("DOMContentLoaded", restoreOptions);

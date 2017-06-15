@@ -1,10 +1,13 @@
 (function(){
-  var getting = browser.storage.local.get("newtabpage");
-  function onError(error) {
-    console.log(`Error: ${error}`);
-  }
-
-  getting.then(function(settings){
-    document.location = settings.newtabpage || 'about:home';
-  }, onError);
+  browser.storage.local.get("newtabpage").then(settings => {
+    try {
+      let targetPage = settings.newtabpage || 'about:home';
+      document.title = `Redirecting to ${targetPage}`;
+      document.location = targetPage;
+    } catch(e) {
+      document.getElementById('error_detail').innerText = e;
+    }    
+  }, error => {
+    document.getElementById('error_detail').innerText = error;
+  });
 })();
