@@ -1,10 +1,7 @@
 (function(){
-  var getting = browser.storage.local.get("newtabpage");
-  function onError(error) {
-    console.log(`Error: ${error}`);
-  }
-
-  getting.then(function(settings){
+  browser.storage.local.get("newtabpage").then(settings => {
     document.location = settings.newtabpage || 'about:home';
-  }, onError);
+  }, error => {
+    console.log(`Error: ${error}`);
+  });
 })();
