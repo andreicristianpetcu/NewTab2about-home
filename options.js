@@ -1,9 +1,20 @@
 var pageUrlBox = document.querySelector("#newtabpage");
+function showMessageOnButton(message){
+  document.querySelector("#save_button").innerText = message;
+}
 function saveOptions(e) {
   e.preventDefault();
   browser.storage.local.set({
     newtabpage: pageUrlBox.value
-  });
+  }).then(() => {
+      showMessageOnButton('Seved!');
+      setTimeout(function(){ showMessageOnButton('Save'); }, 3000);
+    }, error => {
+      showMessageOnButton('Error!');
+      setTimeout(function(){ showMessageOnButton('Save'); }, 3000);
+      console.log(error);
+    }
+  );
 }
 
 function restoreOptions() {
