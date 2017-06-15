@@ -2,7 +2,7 @@
     "name": "__MSG_appName__",
     "description": "__MSG_appDescription__",
     "author": "Andrei Petcu",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "manifest_version": 2,
     "icons": {
       "32": "images/icon32x32.png",

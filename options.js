@@ -12,7 +12,6 @@ function saveOptions(e) {
     }, error => {
       showMessageOnButton('Error!');
       setTimeout(function(){ showMessageOnButton('Save'); }, 3000);
-      console.log(error);
     }
   );
 }
@@ -23,9 +22,7 @@ function restoreOptions() {
     pageUrlBox.value = result.newtabpage || "about:home";
   }
 
-  browser.storage.local.get("newtabpage").then(setCurrentChoice, error => {
-    console.log(error);
-  });
+  browser.storage.local.get("newtabpage").then(setCurrentChoice, error => {});
 }
 
 document.addEventListener("DOMContentLoaded", restoreOptions);
